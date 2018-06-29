@@ -2,6 +2,8 @@ package domain;
 
 import java.util.ArrayList;
 
+//-Djava.system.class.loader=org.uqbar.apo.APOClassLoader
+//-Djava.system.class.loader=com.uqbar.apo.APOClassLoader
 
 public class Estudiante {
 	String nombre;
