@@ -8,11 +8,26 @@ import java.util.ArrayList;
 public class Estudiante {
 	String nombre;
 	long legajo;
+	String git;
 	ArrayList<TareaConceptual> tareasConceptuales = new ArrayList<TareaConceptual>();
 	ArrayList<TareaNumerica> tareasNumericas = new ArrayList<TareaNumerica>();
 	
+	public Estudiante(String unNombre, long unLegajo, String unGit, ArrayList<TareaConceptual> unasTareasConceptuales, ArrayList<TareaNumerica> unasTareasNumericas) {
+		this.setNombre(unNombre);
+		this.setLegajo(unLegajo);
+		this.setGit(unGit);
+		this.setTareasConceptuales(unasTareasConceptuales);
+		this.setTareasNumericas(unasTareasNumericas);
+	}
+	
 	public String getNombre() {
 		return nombre;
+	}
+	public void setGit(String git) {
+		this.git = git;
+	}
+	public String getGit() {
+		return git;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -34,6 +49,9 @@ public class Estudiante {
 	}
 	public void setTareasNumericas(ArrayList<TareaNumerica> tareasNumericas) {
 		this.tareasNumericas = tareasNumericas;
+	}
+	public void agregarTareaConceptual(TareaConceptual unaTarea) {
+		this.getTareasConceptuales().add(unaTarea);
 	}
 	
 }
