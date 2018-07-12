@@ -75,7 +75,7 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 			.setCaption("Ver mis notas")
 			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
 		  new Button(mainPanel)
-			.setCaption("XD")
+			.setCaption("Boton de Prueba")
 			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
 		  
 	  }
