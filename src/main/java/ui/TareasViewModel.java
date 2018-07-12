@@ -1,5 +1,6 @@
 package ui;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.uqbar.commons.model.annotations.Observable;
 
@@ -8,12 +9,13 @@ import domain.*;
 @Observable
 public class TareasViewModel {
 	
-	ArrayList<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
+	private List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 
-	public TareasViewModel(ArrayList<TareaAbstracta> unasTareas) {
-		tareas.addAll(unasTareas);
+	public List<TareaAbstracta> getTareas() {
+		return tareas;
 	}
-	/*public TareasViewModel(int ble) {
-		prueba = ble;
-	}*/
+
+	public TareasViewModel(List<TareaAbstracta> unasTareas) {
+		this.tareas.addAll(unasTareas);
+	}	
 }

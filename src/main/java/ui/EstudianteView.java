@@ -4,6 +4,7 @@ import domain.*;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.uqbar.arena.layout.VerticalLayout;
@@ -53,9 +54,6 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 		  new Label(mainPanel).setText("Git nuevo:");
 		  new TextBox(mainPanel).bindValueToProperty("git");
 		  
-		  
-		  
-
 		 /* new NumericField(mainPanel).bindValueToProperty("millas");
 
 		  new Button(mainPanel)
@@ -75,25 +73,13 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 			.setCaption("Ver mis notas")
 			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
 		  new Button(mainPanel)
-			.setCaption("Boton de Prueba")
-			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
+			.setCaption("Cambiar Git");
+			//Todo tuyo Ro
 		  
 	  }
 	  
-	  public void prueba() {
-		  Dialog<?> tareitas = new PruebaView(this);
-		  tareitas.open();
-		  tareitas.onAccept(()->{});
-		  tareitas.onCancel(()->{});
-	  }
-	  
-	  public void mostrarNotas(ArrayList<TareaAbstracta> unasTareas) {
-		  //new TareasView(this, new TareasViewModel(unasTareas)).open();
-		  Dialog<?> tareitas = new TareasView(this, new TareasViewModel(unasTareas));
-		  tareitas.open();
-		  tareitas.onAccept(()->{});
-		  tareitas.onCancel(()->{});
-		  
+	  public void mostrarNotas(List<TareaAbstracta> unasTareas) {
+		  new TareasView(this, new TareasViewModel(unasTareas)).open(); 
 	  }
 
 }

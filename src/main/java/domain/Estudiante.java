@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //-Djava.system.class.loader=org.uqbar.apo.APOClassLoader
 //-Djava.system.class.loader=com.uqbar.apo.APOClassLoader
@@ -9,7 +10,7 @@ public class Estudiante {
 	String nombre;
 	long legajo;
 	String git;
-	ArrayList<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
+	List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
 	public Estudiante(String unNombre, long unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
 		this.setNombre(unNombre);
@@ -36,7 +37,7 @@ public class Estudiante {
 	public void setLegajo(long legajo) {
 		this.legajo = legajo;
 	}
-	public ArrayList<TareaAbstracta> getTareas() {
+	public List<TareaAbstracta> getTareas() {
 		return tareas;
 	}
 	public void setTareas(ArrayList<TareaAbstracta> unasTareas) {

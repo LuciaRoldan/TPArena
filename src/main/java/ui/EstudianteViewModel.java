@@ -1,6 +1,7 @@
 package ui;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.uqbar.commons.model.annotations.Observable;
 
@@ -27,7 +28,7 @@ public class EstudianteViewModel {
 	public long getLegajo() {
 		return estudiante.getLegajo();
 	}
-	public ArrayList<TareaAbstracta> getTareas() {
+	public List<TareaAbstracta> getTareas() {
 		return estudiante.getTareas();
 	}
 }
