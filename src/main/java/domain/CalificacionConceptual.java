@@ -5,22 +5,28 @@ import static java.util.Arrays.asList;
 
 public enum CalificacionConceptual {
 	
-	DISTINGUIDO(7),
-	BIENMAS(6),
-	BIEN(5),
-	BIENMENOS(4),
-	REGULARMAS(3),
-	REGULAR(2),
-	MAL(1);
+	DISTINGUIDO(7, "Distinguido"),
+	BIENMAS(6, "Bien +"),
+	BIEN(5, "Bien"),
+	BIENMENOS(4, "Bien -"),
+	REGULARMAS(3, "Regular +"),
+	REGULAR(2, "Regular"),
+	MAL(1, "Mal");
 
 	int valor;
+	String titulo;
 	
-	private CalificacionConceptual(int unValor){
+	private CalificacionConceptual(int unValor, String unTitulo){
 		valor = unValor;
+		titulo = unTitulo;
 	}
 	
 	int getValor() {
 		return valor;
+	}
+	
+	String getTitulo() {
+		return titulo;
 	}
 	
 	public static List<CalificacionConceptual> listaCalificaciones = asList(null, CalificacionConceptual.MAL, CalificacionConceptual.REGULAR, CalificacionConceptual.REGULARMAS, 

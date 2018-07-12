@@ -14,23 +14,31 @@ import org.uqbar.arena.widgets.NumericField;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
 import org.uqbar.arena.widgets.tables.Table;
+import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.MainWindow;
+import org.uqbar.arena.windows.SimpleWindow;
+import org.uqbar.arena.windows.WindowOwner;
 import org.uqbar.lacar.ui.model.ControlBuilder;
 import org.uqbar.lacar.ui.model.bindings.Binding;
 
 
 import domain.*;
 
-public class EstudianteView extends MainWindow<EstudianteViewModel>{
+public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 
-	public EstudianteView() {
-	    super(new EstudianteViewModel(new Estudiante("Luis Lucena", (long) 123456789, "luisitoElCapito", new ArrayList<TareaConceptual>(), new ArrayList<TareaNumerica>())));
+	public EstudianteView(WindowOwner padre) {
+	    super(padre, new EstudianteViewModel(
+	    		new Estudiante("Luis Lucena", (long) 123456789, "luisitoElCapito", 
+	    						new ArrayList<TareaAbstracta>())));
 	    
-		this.getModelObject().get.add(new TareaConceptual());
+	    ArrayList<CalificacionConceptual> notas = new ArrayList<CalificacionConceptual>();
+	    notas.add(CalificacionConceptual.DISTINGUIDO);
+	    notas.add(CalificacionConceptual.DISTINGUIDO);
+		this.getModelObject().getTareas().add(new TareaConceptual("Literatura", notas));
 	}
 
 	  @Override
-	  public void createContents(Panel mainPanel) {
+	  public void createFormPanel(Panel mainPanel) {
 		  this.setTitle("Informacion del alumno");
 		  mainPanel.setLayout(new VerticalLayout());
 		  
@@ -45,14 +53,8 @@ public class EstudianteView extends MainWindow<EstudianteViewModel>{
 		  new Label(mainPanel).setText("Git nuevo:");
 		  new TextBox(mainPanel).bindValueToProperty("git");
 		  
-		  new Button(mainPanel)
-			.setCaption("Modificar cuanta de Git")
-			.onClick(()-> this.getModelObject().setGit("da"));
 		  
-		  new Table<TareaConceptual>(mainPanel, TareaConceptual.class)
-		  			.bindItemsToProperty("nombre");
-		  			/*.bindItemsToProperty("promedio")
-		  			.bindItemsToProperty("aprueba");*/
+		  
 
 		 /* new NumericField(mainPanel).bindValueToProperty("millas");
 
@@ -66,13 +68,32 @@ public class EstudianteView extends MainWindow<EstudianteViewModel>{
 
 		  new Label(mainPanel).setText(" kilómetros");*/
 	  }
-
-	  public static void main(String[] args) {
-	    new EstudianteView().startApplication();
+	  
+	  @Override
+	  public void addActions(Panel mainPanel) {
+		  new Button(mainPanel)
+			.setCaption("Ver mis notas")
+			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
+		  new Button(mainPanel)
+			.setCaption("XD")
+			.onClick(()-> this.mostrarNotas(getModelObject().getTareas()));
+		  
 	  }
 	  
-	  public void mostrarNotas(Panel mainPanel) {
-		  new Label(mainPanel).setText("Legajo:");
-		  new Label(mainPanel).bindValueToProperty("legajo");
+	  public void prueba() {
+		  Dialog<?> tareitas = new PruebaView(this);
+		  tareitas.open();
+		  tareitas.onAccept(()->{});
+		  tareitas.onCancel(()->{});
 	  }
+	  
+	  public void mostrarNotas(ArrayList<TareaAbstracta> unasTareas) {
+		  //new TareasView(this, new TareasViewModel(unasTareas)).open();
+		  Dialog<?> tareitas = new TareasView(this, new TareasViewModel(unasTareas));
+		  tareitas.open();
+		  tareitas.onAccept(()->{});
+		  tareitas.onCancel(()->{});
+		  
+	  }
+
 }

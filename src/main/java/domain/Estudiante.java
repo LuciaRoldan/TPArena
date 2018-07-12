@@ -9,15 +9,13 @@ public class Estudiante {
 	String nombre;
 	long legajo;
 	String git;
-	ArrayList<TareaConceptual> tareasConceptuales = new ArrayList<TareaConceptual>();
-	ArrayList<TareaNumerica> tareasNumericas = new ArrayList<TareaNumerica>();
+	ArrayList<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
-	public Estudiante(String unNombre, long unLegajo, String unGit, ArrayList<TareaConceptual> unasTareasConceptuales, ArrayList<TareaNumerica> unasTareasNumericas) {
+	public Estudiante(String unNombre, long unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
 		this.setNombre(unNombre);
 		this.setLegajo(unLegajo);
 		this.setGit(unGit);
-		this.setTareasConceptuales(unasTareasConceptuales);
-		this.setTareasNumericas(unasTareasNumericas);
+		this.setTareas(unasTareas);
 	}
 	
 	public String getNombre() {
@@ -38,20 +36,14 @@ public class Estudiante {
 	public void setLegajo(long legajo) {
 		this.legajo = legajo;
 	}
-	public ArrayList<TareaConceptual> getTareasConceptuales() {
-		return tareasConceptuales;
+	public ArrayList<TareaAbstracta> getTareas() {
+		return tareas;
 	}
-	public void setTareasConceptuales(ArrayList<TareaConceptual> tareasConceptuales) {
-		this.tareasConceptuales = tareasConceptuales;
+	public void setTareas(ArrayList<TareaAbstracta> unasTareas) {
+		this.tareas = unasTareas;
 	}
-	public ArrayList<TareaNumerica> getTareasNumericas() {
-		return tareasNumericas;
-	}
-	public void setTareasNumericas(ArrayList<TareaNumerica> tareasNumericas) {
-		this.tareasNumericas = tareasNumericas;
-	}
-	public void agregarTareaConceptual(TareaConceptual unaTarea) {
-		this.getTareasConceptuales().add(unaTarea);
+	public void agregarTarea(TareaAbstracta unaTarea) {
+		this.getTareas().add(unaTarea);
 	}
 	
 }

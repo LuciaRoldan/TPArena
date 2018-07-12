@@ -2,16 +2,23 @@ package domain;
 
 import java.util.ArrayList;
 
-public class TareaConceptual{
-	String nombre;
+
+public class TareaConceptual extends TareaAbstracta{
 	ArrayList<CalificacionConceptual> notas = new ArrayList<CalificacionConceptual>();
+	CalificacionConceptual notaPromedio;
 	
-	public CalificacionConceptual promedio() {
+	public TareaConceptual(String unNombre, ArrayList<CalificacionConceptual> unasNotas) {
+		this.nombre = unNombre;
+		this.notas = unasNotas;
+	}
+	
+	public String promedio() {
 		float promedio = notas.stream().mapToInt(nota -> nota.getValor()).sum() / notas.size();
-		return notas.get(1).obtenerCalificacionConceptual((int)Math.round(promedio)); 
+		notaPromedio = notas.get(1).obtenerCalificacionConceptual((int)Math.round(promedio)); 
+		return notaPromedio.getTitulo();
 	}
 	
 	public boolean aprueba() {
-		return this.promedio().getValor() >= 4;
+		return this.notaPromedio.getValor() >= 4;
 	}
 }

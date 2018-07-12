@@ -9,6 +9,7 @@ import domain.*;
 @Observable
 public class EstudianteViewModel {		
 	private Estudiante estudiante;
+	//private ArrayList<TareaConceptualViewModel> tareasConceptuales;
 
 	public EstudianteViewModel(Estudiante unEstudiante) {
 		this.estudiante = unEstudiante;
@@ -26,10 +27,7 @@ public class EstudianteViewModel {
 	public long getLegajo() {
 		return estudiante.getLegajo();
 	}
-	public ArrayList<TareaConceptual> getTareasConceptuales() {
-		return estudiante.getTareasConceptuales();
+	public ArrayList<TareaAbstracta> getTareas() {
+		return estudiante.getTareas();
 	}
-	public ArrayList<TareaNumerica> getTareasNumericas() {
-		return estudiante.getTareasNumericas();
-	}	
 }
