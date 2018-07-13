@@ -3,11 +3,6 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.uqbar.commons.model.annotations.Observable;
-
-//-Djava.system.class.loader=org.uqbar.apo.APOClassLoader
-//-Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-
 public class Estudiante {
 	String nombre;
 	int legajo;
@@ -33,7 +28,7 @@ public class Estudiante {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public long getLegajo() {
+	public int getLegajo() {
 		return legajo;
 	}
 	public void setLegajo(int legajo) {

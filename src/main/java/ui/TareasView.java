@@ -1,21 +1,13 @@
 package ui;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.uqbar.arena.aop.windows.TransactionalDialog;
-import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.tables.Column;
 import org.uqbar.arena.widgets.tables.Table;
-import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
-import org.uqbar.lacar.ui.model.bindings.Observable;
 
 import domain.TareaAbstracta;
-import domain.TareaConceptual;
 
 @SuppressWarnings("serial")
 public class TareasView extends SimpleWindow<EstudianteViewModel>{

@@ -30,7 +30,7 @@ public class EstudianteViewModel {
 	public void setLegajo(int legajo) {
 		estudiante.setLegajo(legajo);
 	}
-	public long getLegajo() {
+	public int getLegajo() {
 		return estudiante.getLegajo();
 	}
 	public List<TareaAbstracta> getTareas() {
