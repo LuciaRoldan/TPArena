@@ -27,11 +27,9 @@ import domain.*;
 
 public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 	
-	String git;
-	
 	public EstudianteView(WindowOwner padre) {
 	    super(padre, new EstudianteViewModel(
-	    		new Estudiante("Luis Lucena", (long) 123456789, "luisitoElCapito", 
+	    		new Estudiante("Luis Lucena", 1234567, "luisitoElCapito", 
 	    						new ArrayList<TareaAbstracta>())));
 	    
 	    ArrayList<TareaAbstracta> listaTareas = new ArrayList<TareaAbstracta>();
@@ -46,8 +44,6 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 	    notas2.add((Integer) 10);
 	    TareaNumerica unaTarea2 = new TareaNumerica("Disenio de Sistemas", notas2);
 	    
-	    
-	    
 	    listaTareas.add(unaTarea1);
 	    listaTareas.add(unaTarea2);
 		this.getModelObject().setTareas(listaTareas);
@@ -58,52 +54,34 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 		  this.setTitle("Informacion del alumno");
 		  mainPanel.setLayout(new VerticalLayout());
 		  
-		  new Label(mainPanel).setText("Información actual del alumno")
-		  	.setWidth(300);
-		  
-		  new Label(mainPanel).setText("Nombre:").setWidth(300);
-		  new Label(mainPanel).bindValueToProperty("nombre");
-		  new Label(mainPanel).setText("Legajo:");
-		  new Label(mainPanel).bindValueToProperty("legajo");
-		  new Label(mainPanel).setText("Git:");
-		  new Label(mainPanel).bindValueToProperty("git");
-		  
-		  new Label(mainPanel).setText("Modificar informacion").setWidth(300);
-		  
-		  new Label(mainPanel).setText("Nombre nuevo:");
-		  new TextBox(mainPanel).bindValueToProperty("nombre");
-		  new Label(mainPanel).setText("Legajo nuevo:");
-		  new TextBox(mainPanel).bindValueToProperty("legajo");
-		  new Label(mainPanel).setText("Git nuevo:");
-		  new TextBox(mainPanel).bindValueToProperty("git");
-		  
-		  new Button(mainPanel)
-			.setCaption("Actualizar informacion")
-			.onClick(()-> this.getModelObject().setGit("git")).setWidth(100);
-		  
-		  new Label(mainPanel).setText("El nuevo Git es:");
-		  
-		  new Label(mainPanel) //
-			.setBackground(Color.PINK)
-			.bindValueToProperty("git");
+		  new Label(mainPanel).setText("Bienvenido!");
 	  }
 	  
 	  @Override
 	  public void addActions(Panel mainPanel) {
 		  new Button(mainPanel)
+			.setCaption("Ver datos")
+			.onClick(()-> this.mostrarDatos(getModelObject())).setWidth(100);
+		  
+		  new Button(mainPanel)
 			.setCaption("Ver mis notas")
-			.onClick(()-> this.mostrarNotas(getModelObject()));
+			.onClick(()-> this.mostrarNotas(getModelObject())).setWidth(100);
+		  
 		  new Button(mainPanel)
-			.setCaption("Cambiar Git")
-			.onClick(()-> this.getModelObject().setGit("git"));
-		  new Button(mainPanel)
-			.setCaption("Actualizar informacion")
-			.onClick(()-> this.getModelObject().setGit("estoyreloco")).setWidth(100);
+			.setCaption("Modificar datos")
+			.onClick(()-> this.mostrarCambioDatos(getModelObject())).setWidth(100);
 	  }
-	  
-	  
+
 	  public void mostrarNotas(EstudianteViewModel unEstudiante) {
 		  new TareasView(this, unEstudiante).open(); 
+	  }
+	  
+	  public void mostrarDatos(EstudianteViewModel unEstudiante) {
+		  new DatosView(this, unEstudiante).open(); 
+	  }
+	  
+	  public void mostrarCambioDatos(EstudianteViewModel unEstudiante) {
+		  new CambiarDatosView(this, unEstudiante).open(); 
 	  }
 
 }

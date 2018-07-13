@@ -10,11 +10,11 @@ import org.uqbar.commons.model.annotations.Observable;
 
 public class Estudiante {
 	String nombre;
-	long legajo;
+	int legajo;
 	String git;
 	List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
-	public Estudiante(String unNombre, long unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
+	public Estudiante(String unNombre, int unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
 		this.setNombre(unNombre);
 		this.setLegajo(unLegajo);
 		this.setGit(unGit);
@@ -36,7 +36,7 @@ public class Estudiante {
 	public long getLegajo() {
 		return legajo;
 	}
-	public void setLegajo(long legajo) {
+	public void setLegajo(int legajo) {
 		this.legajo = legajo;
 	}
 	public List<TareaAbstracta> getTareas() {

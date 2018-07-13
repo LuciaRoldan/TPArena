@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.uqbar.arena.aop.windows.TransactionalDialog;
 import org.uqbar.arena.layout.VerticalLayout;
+import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.tables.Column;
 import org.uqbar.arena.widgets.tables.Table;
@@ -31,6 +32,11 @@ public class TareasView extends SimpleWindow<EstudianteViewModel>{
 		super.createMainTemplate(mainPanel);
 
 		this.createResultsGrid(mainPanel);
+		
+		  new Button(mainPanel)
+			.setCaption("Aceptar")
+			.onClick(()-> this.close()).setWidth(100);
+		
 	}
 
 

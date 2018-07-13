@@ -18,14 +18,17 @@ public class EstudianteViewModel {
 	public String getNombre() {
 		return estudiante.getNombre();
 	}
-	public void setGit(String git) {
-		estudiante.setGit(git);
-	}
 	public void setNombre(String nombre) {
 		estudiante.setNombre(nombre);
 	}
+	public void setGit(String git) {
+		estudiante.setGit(git);
+	}
 	public String getGit() {
 		return estudiante.getGit();
+	}
+	public void setLegajo(int legajo) {
+		estudiante.setLegajo(legajo);
 	}
 	public long getLegajo() {
 		return estudiante.getLegajo();
