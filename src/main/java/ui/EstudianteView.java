@@ -103,7 +103,7 @@ public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 	  
 	  
 	  public void mostrarNotas(EstudianteViewModel unEstudiante) {
-		  new TareasVieww(this, unEstudiante).open(); 
+		  new TareasView(this, unEstudiante).open(); 
 	  }
 
 }

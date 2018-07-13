@@ -17,15 +17,16 @@ import domain.TareaAbstracta;
 import domain.TareaConceptual;
 
 @SuppressWarnings("serial")
-public class TareasView extends SimpleWindow<TareasViewModel>{
+public class TareasView extends SimpleWindow<EstudianteViewModel>{
 	
-	public TareasView(WindowOwner main, TareasViewModel unasTareas) {
-		super(main, unasTareas);
+	public TareasView(WindowOwner main, EstudianteViewModel unEstudiante) {
+		super(main, unEstudiante);
 	}
 
 	@Override
 	protected void createMainTemplate(Panel mainPanel) {
-		this.setTitle("Notas de Luisito");
+		this.setTaskDescription("Notas de Luisito");
+		this.setTitle("Notas");
 
 		super.createMainTemplate(mainPanel);
 
@@ -38,8 +39,7 @@ public class TareasView extends SimpleWindow<TareasViewModel>{
 		table.setNumberVisibleRows(3);
 		table.setWidth(450);
 
-		table.bindItemsToProperty("nombre");
-		table.bindValueToProperty("promedio");
+		table.bindItemsToProperty("tareas");
 
 		this.describeResultsGrid(table);
 	}
@@ -68,21 +68,3 @@ public class TareasView extends SimpleWindow<TareasViewModel>{
 		
 	}
 }
-/*	
-	@Override
-	protected void createFormPanel(Panel mainPanel) {
-		
-		this.setTitle("Luisitoooooooooo");
-		mainPanel.setLayout(new VerticalLayout());
-		
-		Table<TareaAbstracta> tablaNotas = new Table<TareaAbstracta>(mainPanel, TareaAbstracta.class);
-		tablaNotas.bindItemsToProperty("nombre");
-	//	tablaNotas.bindItems((Observable<M>) this.getModelObject().getTareas().get(1));
-		
-		
-		
-//		Table<TareasViewModel> tablaNotas = new Table<TareasViewModel>(mainPanel, TareasViewModel.class);
-//		tablaNotas.bindItemsToProperty("tareas");
-//		tablaNotas.bindItems((Observable<M>) this.getModelObject().getTareas().get(1));
-	}
-}*/

@@ -37,11 +37,4 @@ public class EstudianteViewModel {
 		estudiante.setTareas(tareas);
 	}
 	
-	
-	public void setTareasConceptual(ArrayList<TareaConceptual> unasTareas) {
-		estudiante.setTareasConceptual(unasTareas);
-	}
-	public void setTareasNumerica(ArrayList<TareaNumerica> unasTareas) {
-		estudiante.setTareasNumerica(unasTareas);
-	}
 }
