@@ -49,11 +49,4 @@ public class Estudiante {
 		this.getTareas().add(unaTarea);
 	}
 	
-	
-	public void setTareasConceptual(ArrayList<TareaConceptual> unasTareas) {
-		this.tareas.addAll(unasTareas);
-	}
-	public void setTareasNumerica(ArrayList<TareaNumerica> unasTareas) {
-		this.tareas.addAll(unasTareas);
-	}
 }
