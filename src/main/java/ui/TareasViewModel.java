@@ -1,6 +1,7 @@
 package ui;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.uqbar.commons.model.annotations.Observable;
 
@@ -17,5 +18,17 @@ public class TareasViewModel {
 
 	public TareasViewModel(List<TareaAbstracta> unasTareas) {
 		this.tareas.addAll(unasTareas);
-	}	
+	}
+	
+	public List<String> getNombre() {
+		return tareas.stream().map(unaTarea -> unaTarea.getNombre()).collect(Collectors.toList());
+	}
+	
+	public List<String> getPromedio(){
+		return tareas.stream().map(unaTarea -> unaTarea.getPromedio()).collect(Collectors.toList());
+	}
+	
+	
+	
+	
 }

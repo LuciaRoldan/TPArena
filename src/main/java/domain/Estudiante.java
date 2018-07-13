@@ -3,6 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.uqbar.commons.model.annotations.Observable;
+
 //-Djava.system.class.loader=org.uqbar.apo.APOClassLoader
 //-Djava.system.class.loader=com.uqbar.apo.APOClassLoader
 
@@ -41,10 +43,17 @@ public class Estudiante {
 		return tareas;
 	}
 	public void setTareas(ArrayList<TareaAbstracta> unasTareas) {
-		this.tareas = unasTareas;
+		this.tareas.addAll(unasTareas);
 	}
 	public void agregarTarea(TareaAbstracta unaTarea) {
 		this.getTareas().add(unaTarea);
 	}
 	
+	
+	public void setTareasConceptual(ArrayList<TareaConceptual> unasTareas) {
+		this.tareas.addAll(unasTareas);
+	}
+	public void setTareasNumerica(ArrayList<TareaNumerica> unasTareas) {
+		this.tareas.addAll(unasTareas);
+	}
 }

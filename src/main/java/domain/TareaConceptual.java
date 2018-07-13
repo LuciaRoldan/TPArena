@@ -14,7 +14,7 @@ public class TareaConceptual extends TareaAbstracta{
 	}
 	
 	@Override
-	public String promedio() {
+	public String getPromedio() {
 		float promedio = notas.stream().mapToInt(nota -> nota.getValor()).sum() / notas.size();
 		notaPromedio = notas.get(1).obtenerCalificacionConceptual((int)Math.round(promedio)); 
 		return notaPromedio.getTitulo();

@@ -14,6 +14,6 @@ public abstract class TareaAbstracta {
 		this.nombre = nombre;
 	}
 	
-	public abstract String promedio();
+	public abstract String getPromedio();
 	public abstract boolean aprueba();
 }

@@ -10,8 +10,7 @@ import domain.*;
 @Observable
 public class EstudianteViewModel {		
 	private Estudiante estudiante;
-	//private ArrayList<TareaConceptualViewModel> tareasConceptuales;
-
+	
 	public EstudianteViewModel(Estudiante unEstudiante) {
 		this.estudiante = unEstudiante;
 	}
@@ -22,6 +21,9 @@ public class EstudianteViewModel {
 	public void setGit(String git) {
 		estudiante.setGit(git);
 	}
+	public void setNombre(String nombre) {
+		estudiante.setNombre(nombre);
+	}
 	public String getGit() {
 		return estudiante.getGit();
 	}
@@ -30,5 +32,16 @@ public class EstudianteViewModel {
 	}
 	public List<TareaAbstracta> getTareas() {
 		return estudiante.getTareas();
+	}
+	public void setTareas(ArrayList<TareaAbstracta> tareas) {
+		estudiante.setTareas(tareas);
+	}
+	
+	
+	public void setTareasConceptual(ArrayList<TareaConceptual> unasTareas) {
+		estudiante.setTareasConceptual(unasTareas);
+	}
+	public void setTareasNumerica(ArrayList<TareaNumerica> unasTareas) {
+		estudiante.setTareasNumerica(unasTareas);
 	}
 }
