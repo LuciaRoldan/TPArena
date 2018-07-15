@@ -17,7 +17,7 @@ public class CambiarDatosView extends SimpleWindow<EstudianteViewModel>{
 		super(main, unEstudiante);
 	}
 
-	@Override
+	@Override 
 	protected void addActions(Panel actionsPanel) {
 		
 	}
