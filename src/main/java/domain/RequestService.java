@@ -26,21 +26,22 @@ public class RequestService {
     	System.out.println(response.getStatus());
     }
     
-    public ClientResponse consultarAlumno() {
+    public String consultarAlumno() {
     	WebResource web = cliente.resource(NOTITAS);
     	ClientResponse estudiante = web.header("Authorization", "Bearer " + TOKEN)
     								.accept(MediaType.APPLICATION_JSON)
     								.get(ClientResponse.class);
-    	System.out.println(estudiante.getStatus());
-    	return estudiante;
+    	//System.out.println(estudiante.getStatus());
+    	
+    	return estudiante.getEntity(String.class);
     }
     
-    public ClientResponse consultarNotas() {
+    public String consultarNotas() {
     	WebResource web = cliente.resource(NOTITAS).path("assignments");
     	ClientResponse respuesta = web.header("Authorization", "Bearer " + TOKEN)
     								.accept(MediaType.APPLICATION_JSON)
     								.get(ClientResponse.class);
-    	System.out.println(respuesta.getStatus());
-    	return respuesta;
+    	//System.out.println(respuesta.getStatus());
+    	return respuesta.getEntity(String.class);
     }
 }

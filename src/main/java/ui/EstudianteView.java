@@ -15,9 +15,8 @@ import org.uqbar.arena.windows.WindowOwner;
 public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 	
 	public EstudianteView(WindowOwner padre) {
-	    super(padre, new EstudianteViewModel(
-	    		new Estudiante("Luis Lucena", 1234567, "luisitoElCapito", 
-	    						new ArrayList<TareaAbstracta>())));
+	    super(padre, new EstudianteViewModel( new Estudiante("Luis Lucena", 1234567, "luisitoElCapito", 
+	    									new ArrayList<TareaAbstracta>())));
 	    
 	    ArrayList<TareaAbstracta> listaTareas = new ArrayList<TareaAbstracta>();
 	    

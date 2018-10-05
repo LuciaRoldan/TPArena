@@ -16,22 +16,22 @@ public class EstudianteViewModel {
 	}
 
 	public String getNombre() {
-		return estudiante.getNombre();
+		return estudiante.getFirst_name();
 	}
 	public void setNombre(String nombre) {
-		estudiante.setNombre(nombre);
+		estudiante.setFirst_name(nombre);
 	}
 	public void setGit(String git) {
-		estudiante.setGit(git);
+		estudiante.setGithub_user(git);
 	}
 	public String getGit() {
-		return estudiante.getGit();
+		return estudiante.getGithub_user();
 	}
 	public void setLegajo(int legajo) {
-		estudiante.setLegajo(legajo);
+		estudiante.setCode(legajo);
 	}
 	public int getLegajo() {
-		return estudiante.getLegajo();
+		return estudiante.getCode();
 	}
 	public List<TareaAbstracta> getTareas() {
 		return estudiante.getTareas();
