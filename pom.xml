@@ -21,6 +21,11 @@
   </repositories>
 
   <dependencies>
+  <dependency>
+		<groupId>com.sun.jersey</groupId>
+		<artifactId>jersey-client</artifactId>
+		<version>1.8</version>
+	</dependency>
     <dependency>
       <groupId>org.uqbar-project</groupId>
       <artifactId>arena-jface</artifactId>
