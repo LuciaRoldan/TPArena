@@ -3,6 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class Estudiante {
 	String first_name;
 	String last_name;
@@ -44,5 +46,8 @@ public class Estudiante {
 	public void agregarTarea(TareaAbstracta unaTarea) {
 		this.getTareas().add(unaTarea);
 	}
+	
+	@JsonCreator
+	public Estudiante(){}
 	
 }

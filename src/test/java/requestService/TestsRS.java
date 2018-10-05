@@ -8,6 +8,11 @@ import domain.Estudiante;
 import domain.RequestService;
 
 public class TestsRS {
+	
+	@Test
+	public void postDeUnAlumno() {
+		
+	}
 
 	@Test
 	public void getDeUnAlumno() {
