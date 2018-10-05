@@ -17,7 +17,7 @@ public class RequestService {
         this.cliente = Client.create();
     }
     
-    public void cargarAlumno(int id, String input) {
+    public void cargarAlumno(String input) {
     	Client cliente = Client.create();
     	WebResource web = cliente.resource(NOTITAS);
     	ClientResponse response = web.header("Authorization", "Bearer " + TOKEN)
@@ -26,7 +26,7 @@ public class RequestService {
     	System.out.println(response.getStatus());
     }
     
-    public ClientResponse consultarAlumno(int legajo) {
+    public ClientResponse consultarAlumno() {
     	WebResource web = cliente.resource(NOTITAS);
     	ClientResponse estudiante = web.header("Authorization", "Bearer " + TOKEN)
     								.accept(MediaType.APPLICATION_JSON)
@@ -36,7 +36,11 @@ public class RequestService {
     }
     
     public ClientResponse consultarNotas() {
-    	ClientResponse respuesta = null;
+    	WebResource web = cliente.resource(NOTITAS).path("assignments");
+    	ClientResponse respuesta = web.header("Authorization", "Bearer " + TOKEN)
+    								.accept(MediaType.APPLICATION_JSON)
+    								.get(ClientResponse.class);
+    	System.out.println(respuesta.getStatus());
     	return respuesta;
     }
 }
