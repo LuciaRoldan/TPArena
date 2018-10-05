@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.json.simple.parser.JSONParser;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,7 +23,7 @@ public class Parser {
         try {
         	RequestService rs = new RequestService();
         	String json = rs.consultarAlumno();
-        	System.out.println(json);
+        	//System.out.println(json);
             Estudiante estudiante = mapper.readValue(json, Estudiante.class);
             return estudiante;
 
@@ -43,5 +44,9 @@ public class Parser {
         } catch (IOException excepcion) {
             throw excepcion;
         }
+    }
+    
+    public String convertirObjetoEnString(Object x) throws JsonProcessingException {
+    	return mapper.writeValueAsString(x);
     }
 }

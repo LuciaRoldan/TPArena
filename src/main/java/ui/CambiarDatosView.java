@@ -10,11 +10,20 @@ import org.uqbar.arena.widgets.TextBox;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import domain.Estudiante;
+import domain.Parser;
+import domain.RequestService;
+
 @SuppressWarnings("serial")
 public class CambiarDatosView extends SimpleWindow<EstudianteViewModel>{
 	
+	private Estudiante estudiante;
+	
 	public CambiarDatosView(WindowOwner main, EstudianteViewModel unEstudiante) {
 		super(main, unEstudiante);
+		estudiante = unEstudiante.getEstudiante();
 	}
 
 	@Override 
@@ -42,10 +51,20 @@ public class CambiarDatosView extends SimpleWindow<EstudianteViewModel>{
 		new Label(mainPanel).setText("Git nuevo:");
 		new TextBox(mainPanel).bindValueToProperty("git");
 		
-		
+		RequestService rq = new RequestService();
+		Parser parser = new Parser();
 		new Button(mainPanel)
 		.setCaption("Actualizar informacion")
-		.onClick(()-> this.close()).setWidth(100);
+		.onClick(()-> {
+			try {
+				System.out.println(parser.convertirObjetoEnString(this.estudiante));
+				rq.cargarAlumno(parser.convertirObjetoEnString(this.estudiante));
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+		})
+		//.onClick(()-> this.close())
+		.setWidth(100);
 	}
 
 	@Override

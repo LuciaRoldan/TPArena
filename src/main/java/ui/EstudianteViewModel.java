@@ -15,6 +15,10 @@ public class EstudianteViewModel {
 		this.estudiante = unEstudiante;
 	}
 
+	public Estudiante getEstudiante() {
+		return this.estudiante;
+	}
+	
 	public String getNombre() {
 		return estudiante.getFirst_name();
 	}

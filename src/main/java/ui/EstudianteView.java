@@ -2,6 +2,7 @@ package ui;
 
 import domain.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
@@ -14,9 +15,10 @@ import org.uqbar.arena.windows.WindowOwner;
 
 public class EstudianteView extends SimpleWindow<EstudianteViewModel>{
 	
-	public EstudianteView(WindowOwner padre) {
-	    super(padre, new EstudianteViewModel( new Estudiante("Luis Lucena", 1234567, "luisitoElCapito", 
-	    									new ArrayList<TareaAbstracta>())));
+	public EstudianteView(WindowOwner padre) throws IOException {
+	    //super(padre, new EstudianteViewModel( new Estudiante("Luis Lucena", 1234567, "luisitoElCapito", 
+	    	//								new ArrayList<TareaAbstracta>())));
+	    super(padre, new EstudianteViewModel(new Parser().parsearEstudiante()));
 	    
 	    ArrayList<TareaAbstracta> listaTareas = new ArrayList<TareaAbstracta>();
 	    

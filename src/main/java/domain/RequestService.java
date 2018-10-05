@@ -23,7 +23,7 @@ public class RequestService {
     	ClientResponse response = web.header("Authorization", "Bearer " + TOKEN)
     								 .accept(MediaType.APPLICATION_JSON)
     								 .put(ClientResponse.class, input);
-    	System.out.println(response.getStatus());
+    	//System.out.println(response.getStatus());
     }
     
     public String consultarAlumno() {
