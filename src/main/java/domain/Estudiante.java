@@ -9,7 +9,7 @@ public class Estudiante {
 	String first_name;
 	String last_name;
 	int code;
-	String git;
+	String github_user;
 	List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
 	public Estudiante(String unNombre, int unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
@@ -23,10 +23,10 @@ public class Estudiante {
 		return first_name;
 	}
 	public void setGit(String git) {
-		this.git = git;
+		this.github_user = git;
 	}
 	public String getGit() {
-		return git;
+		return github_user;
 	}
 	public void setNombre(String nombre) {
 		this.first_name = nombre;
