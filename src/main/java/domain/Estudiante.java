@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estudiante {
-	String nombre;
-	int legajo;
+	String first_name;
+	String last_name;
+	int code;
 	String git;
 	List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
@@ -17,7 +18,7 @@ public class Estudiante {
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return first_name;
 	}
 	public void setGit(String git) {
 		this.git = git;
@@ -26,13 +27,13 @@ public class Estudiante {
 		return git;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.first_name = nombre;
 	}
 	public int getLegajo() {
-		return legajo;
+		return code;
 	}
 	public void setLegajo(int legajo) {
-		this.legajo = legajo;
+		this.code = legajo;
 	}
 	public List<TareaAbstracta> getTareas() {
 		return tareas;
