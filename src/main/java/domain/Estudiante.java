@@ -3,37 +3,61 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class Estudiante {
-	String nombre;
-	int legajo;
-	String git;
+	String first_name;
+	String last_name;
+	int code;
+	String github_user;
 	List<TareaAbstracta> tareas = new ArrayList<TareaAbstracta>();
 	
 	public Estudiante(String unNombre, int unLegajo, String unGit, ArrayList<TareaAbstracta> unasTareas) {
-		this.setNombre(unNombre);
-		this.setLegajo(unLegajo);
-		this.setGit(unGit);
+		this.setFirst_name(unNombre);
+		this.setCode(unLegajo);
+		this.setGithub_user(unGit);
 		this.setTareas(unasTareas);
 	}
 	
-	public String getNombre() {
-		return nombre;
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setGit(String git) {
-		this.git = git;
+
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getGit() {
-		return git;
+
+
+	public String getLast_name() {
+		return last_name;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
-	public int getLegajo() {
-		return legajo;
+
+
+	public int getCode() {
+		return code;
 	}
-	public void setLegajo(int legajo) {
-		this.legajo = legajo;
+
+
+	public void setCode(int code) {
+		this.code = code;
 	}
+
+
+	public String getGithub_user() {
+		return github_user;
+	}
+
+
+	public void setGithub_user(String github_user) {
+		this.github_user = github_user;
+	}
+	
 	public List<TareaAbstracta> getTareas() {
 		return tareas;
 	}
@@ -43,5 +67,8 @@ public class Estudiante {
 	public void agregarTarea(TareaAbstracta unaTarea) {
 		this.getTareas().add(unaTarea);
 	}
+	
+	@JsonCreator
+	public Estudiante(){}
 	
 }

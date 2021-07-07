@@ -1,6 +1,8 @@
 package ui;
 
 
+import java.io.IOException;
+
 import org.uqbar.arena.Application;
 import org.uqbar.arena.windows.Window;
 
@@ -12,7 +14,13 @@ public class Start extends Application{
 	
 	@Override
 	protected Window<?> createMainWindow() {
-		return new EstudianteView(this);
+		try {
+			return new EstudianteView(this);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	
